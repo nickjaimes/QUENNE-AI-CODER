@@ -235,5 +235,352 @@ The architecture prioritizes:
    - Planning, generation, validation, and approval are isolated stages.
 
 ---
+## 3. High-Level Architecture
+
+Intent
+↓
+Constraint & Policy Engine
+↓
+Planning & Decomposition
+↓
+Generation Modules
+↓
+Validation & Testing
+↓
+Audit & Review Gate
+↓
+Approved Artifacts
+
+No component is permitted to skip a stage.
+
+---
+
+## 4. Core Modules
+
+### Orchestrator
+Coordinates the end-to-end workflow and enforces ordering.
+
+### Governance Engine
+- Evaluates constraints
+- Enforces approval gates
+- Maintains decision logs
+
+### Generation Modules
+- Code scaffolding
+- Documentation
+- Test generation
+(All sandboxed)
+
+### Validation Layer
+- Static analysis
+- Test execution
+- Policy compliance checks
+
+### Audit Layer
+- Immutable logs
+- Human approval records
+
+---
+
+## 5. Non-Goals
+
+This architecture does **not** aim to:
+- replace human engineers
+- claim autonomy or consciousness
+- guarantee correctness or security
+- outperform expert teams
+
+---
+
+## 6. Research Scope
+
+This repository represents:
+- architectural exploration
+- experimental tooling
+- governance patterns
+
+It does not represent a finished or certified system.
+
+---
+
+## 7. Open Questions
+
+- How should long-horizon risk be evaluated?
+- What governance signals scale with system complexity?
+- Where should automation stop by default?
+
+These questions are intentionally left open.
+
+GOVERNANCE.md
+
+# QUENNE-AI-CODER — Governance Framework
+
+## Status
+Foundational · Required · Public
+
+---
+
+## 1. Governance Philosophy
+
+This project follows a single governing principle:
+
+> **Assistance may scale. Authority must remain human.**
+
+Governance is treated as an architectural feature, not a policy add-on.
+
+---
+
+## 2. Mandatory Human Oversight
+
+Human approval is required for:
+- externally visible changes
+- security-sensitive artifacts
+- deployment-related output
+- irreversible transformations
+
+---
+
+## 3. Governance Gates
+
+| Stage | Gate |
+|-----|-----|
+| Planning | Constraint review |
+| Generation | Sandbox isolation |
+| Validation | Automated checks |
+| Release | Human approval |
+
+Skipping gates is prohibited.
+
+---
+
+## 4. Decision Logging
+
+Each run produces:
+- input intent
+- declared constraints
+- generated artifacts
+- validation results
+- approval decision
+
+Logs are append-only.
+
+---
+
+## 5. Authority Boundaries
+
+The system:
+- may propose
+- may generate drafts
+- may suggest mitigations
+
+The system may **not**:
+- self-approve
+- self-deploy
+- self-modify governance rules
+
+---
+
+## 6. Drift Prevention
+
+Repeated patterns are monitored for:
+- reduced human involvement
+- narrowing decision diversity
+- silent escalation of autonomy
+
+If detected, the system must halt and require review.
+
+---
+
+## 7. Governance Is Not Optional
+
+Any derivative work claiming alignment with QUENNE principles must preserve these rules.
+
+THREAT_MODEL.md
+# QUENNE-AI-CODER — Threat Model
+
+## Status
+Research · Non-Exhaustive · Public
+
+---
+
+## 1. Threat Modeling Scope
+
+This document addresses risks related to:
+- misuse
+- over-trust
+- automation bias
+- insecure outputs
+- governance bypass
+
+---
+
+## 2. Threat Categories
+
+### T1 — Automation Bias
+Risk: Humans over-trust generated outputs.
+
+Mitigation:
+- Mandatory review
+- Explicit uncertainty labeling
+
+---
+
+### T2 — Unsafe Code Generation
+Risk: Insecure defaults or patterns.
+
+Mitigation:
+- Secure templates
+- Static analysis
+- Prohibited-pattern checks
+
+---
+
+### T3 — Scope Creep
+Risk: Prototype treated as production.
+
+Mitigation:
+- Clear disclaimers
+- No production defaults
+- Manual deployment barriers
+
+---
+
+### T4 — Governance Erosion
+Risk: Approval gates bypassed over time.
+
+Mitigation:
+- Immutable logs
+- Gate enforcement in orchestrator
+
+---
+
+## 3. Out-of-Scope Threats
+
+This project does not currently address:
+- nation-state attacks
+- hardware-level exploits
+- certified compliance requirements
+
+---
+
+## 4. Living Document
+
+This threat model evolves with research findings.
+
+SECURITY.md
+
+# Security Policy
+
+## Reporting Security Issues
+
+If you discover a security issue:
+
+- **Do not open a public issue**
+- Email: security@quenne.jp (placeholder)
+
+Provide:
+- description
+- reproduction steps
+- potential impact
+
+---
+
+## Scope
+
+This repository:
+- is a research prototype
+- has no security guarantees
+- is not production-hardened
+
+---
+
+## Safe Use Guidelines
+
+- Do not deploy to public networks
+- Do not use with sensitive data
+- Review all generated code manually
+
+---
+
+## Responsible Disclosure
+
+We aim to acknowledge reports within 7 days.
+
+DISCLAIMER.md
+
+# Disclaimer
+
+This repository is provided **for research and experimentation purposes only**.
+
+- No guarantees of correctness, security, or fitness
+- No claims of autonomy or consciousness
+- No certification or regulatory approval
+
+Use at your own risk.
+
+The authors assume no liability for misuse or misinterpretation.
+
+---
+
+## Interpretation Notice
+
+Any references to:
+- intelligence
+- cognition
+- governance
+- alignment
+
+are **architectural metaphors**, not claims of sentience or capability.
+
+CONTRIBUTING.md
+
+# Contributing to QUENNE-AI-CODER
+
+Thank you for your interest.
+
+---
+
+## Contribution Principles
+
+We welcome contributions that:
+- improve clarity
+- increase safety
+- strengthen governance
+- enhance documentation
+
+---
+
+## Contribution Rules
+
+- No unverifiable performance claims
+- No autonomy-expanding changes without discussion
+- No removal of governance gates
+
+---
+
+## Process
+
+1. Fork the repo
+2. Create a feature branch
+3. Add tests or documentation
+4. Open a Pull Request with rationale
+
+---
+
+## Code Style
+
+- Python: Black, isort
+- Tests: pytest
+- Docs: Markdown, clear language
+
+---
+
+## Review Criteria
+
+PRs are evaluated for:
+- technical correctness
+- governance impact
+- clarity and restraint
+
 
 
